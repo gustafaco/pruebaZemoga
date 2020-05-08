@@ -1,0 +1,164 @@
+<main>
+    <header>
+        <div class="row" id="headHeader">
+            <div class="col col-4">
+                <p class="tittle">Rule of Thumb.</p>
+            </div>
+            <div class="col col-8">
+                <nav id="superior">
+                    <ul>
+                        <li><a href="">Past Trials</a></li>
+                        <li><a href="">How It Works</a></li>
+                        <li><a href="">Log In/ Sign Up</a></li>
+                        <li><a href=""><img src="../../assets/img/comissionPath.png" alt=""></a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col col-5" id="popeBox">
+                <div id="popeBack"></div>
+                <div id="popeDialog">
+                    <div id="popeText" >
+                        
+                        <p>What's you opinion</p>
+                        <h1>Pope Francis</h1>
+                        <p>He’s talking tough on clergy sexual abuse, but is he 
+                            just another papal pervert protector? (thumbs down) or 
+                            a true pedophile punishing pontiff? (thumbs up)</p>
+                        
+                        <p id="wiki"><img src="../../assets/img/Wiki.png" alt="">  <a href="">More Information</a></p>
+                    
+                 </div>
+                <div class="thumbs">
+                    <div id="like"><i class="fas fa-thumbs-up fa-2x"></i></div>
+                    <div id="unlike"><i class="fas fa-thumbs-down fa-2x"></i></div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row barras">
+            <div class="col col-4" id="barra1">
+                <p>CLOSING IN</p>
+            </div>
+            <div class="col col-8" id="barra2">
+                <p>22 Days</p>
+            </div>
+        </div>
+    </header>
+    <section id="content">
+        <div class="row" id="message">
+            <div class="col col-12">
+                <div class="row">
+                    <div class="col col-3" id="messageA">
+                        <p>Speak out. Be heard.<br> <span>Be counted</span></p>
+                    </div>
+                    <div class="col col-9" id="messageB">
+                        <p>Rule of Thumb is a crowd sourced court of public 
+                            opinion where anyone and everyone can speak out 
+                            and speak freely. It’s easy: You share your opinion, 
+                            we analyze and put the data in a public report.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row" id="tittleP">
+            <div class="col col-12" id="tittlePA">
+                <p>Vote</p>
+            </div>
+           
+        </div>
+    </section>
+   
+    <section id="worldleaders">
+        <div class="row" >
+           
+            <div class="col-5" *ngFor="let item of celebs">
+         
+                <article class="cardCel" style="background-image: url({{item.urlImg}});">
+
+            <h1 id="name">
+
+             <ng-container *ngIf="item.like>item.unlike; else elseTemplate">
+                 <div id="smallLike"><i class="fas fa-thumbs-up fa-1x"></i></div>
+             </ng-container>
+             <ng-template #elseTemplate>
+                <div id="smallUnlike"><i class="fas fa-thumbs-down fa-1x"></i></div>
+             </ng-template>
+             
+             {{item.name}}
+         </h1>
+         <div id="description">
+         <p id="time">{{item.time}}</p>
+         <p>{{item.description}}</p>
+         <div id="fullReport">
+             <div class="row">
+                 <div class="col col-2">
+                    <div id="smallLike" class="thumbs"><i class="fas fa-thumbs-up fa-1x"></i></div>
+                 </div>    
+                 <div class="col col-1">
+                    <div id="smallUnlike" class="thumbs"><i class="fas fa-thumbs-down fa-1x"></i></div>
+                </div>
+                <div class="col col-8">
+                    <a (click)="OnVote()" class="myButton">{{this.stateVote==true? 'Vote Again':'Vote Now'}}</a>
+                </div>
+             </div>
+            
+        </div>
+        </div>       
+         
+         <div id="vote">
+         <div id="likeA" style="width:{{item.like}}"><i class="fas fa-thumbs-up fa-2x"></i>{{item.like}}</div>
+         <div id="unlikeA" style="width:{{item.unlike}}"><i class="fas fa-thumbs-down fa-2x"></i>{{item.unlike}}</div>
+         </div>
+        </article>
+
+     
+    </div>
+  
+   
+
+    </div>
+    
+    
+     </section>
+     <section>
+         <div class="row" id="bannerDown">
+             <div class="col col-8">
+                <p>Is there anyone else you would want us to add?</p>
+             </div>
+             <div class="col col-4">
+                <a href="#" class="myButtonB">Submit a Name</a><br>  
+             </div>
+
+         </div>
+     </section>
+
+     <footer>
+       <div class="row">
+           <div class="col col-8">
+        <nav id="menuFooter">
+            <ul>
+                <li>Terms and Conditions</li>
+                <li> Privacy Policy </li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col col-4">
+        <div id="social">
+            <ul>
+                <li>Follow Us</li>
+                <li><img src="../../assets/img/facebook.png" alt=""></li>
+                <li><img src="../../assets/img/twitter.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </footer>
+</main>
