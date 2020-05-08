@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
     CommonModule,
     MarerialModule,
     MatIconModule,
+   
   ]
 })
 export class HomeModule { }
